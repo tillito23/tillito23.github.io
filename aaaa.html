@@ -1,0 +1,34 @@
+<!DOCTYPE html>    
+<html lang="en">    
+<head>    
+    <meta charset="UTF-8">    
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>   
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>    
+         <title> ¡Copia el terminal móvil al portapapeles! </title>    
+</head>    
+<body>    
+ <p> Jaja <span id = "target"> httpssss </span> </p> 
+<button class="btn" data-clipboard-action="copy" data-clipboard-target="#target" id="copy_btn">    
+         Botón Copiar    
+</button>    
+ 
+ 
+</body>    
+<script>    
+    $(document).ready(function(){    
+        var targetText=$("#target").text();    
+        var clipboard = new Clipboard('#copy_btn');    
+    
+        clipboard.on('success', function(e) {    
+            console.info('Action:', e.action);    
+            console.info('Text:', e.text);    
+            console.info('Trigger:', e.trigger);    
+                         alerta ("Copiado correctamente");    
+    
+            e.clearSelection();    
+        });    
+    });   
+ 
+ 
+</script>    
+</html>

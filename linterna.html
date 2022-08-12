@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            function miFuncion() {
+                x = document.getElementById("demo");
+                x.innerHTML = "Arquitectura de Software no me gusta";
+                x.style.color = "red";
+            }
+            function miFecha(){
+                document.getElementById("fecha").innerHTML = Date();
+            }
+            function cambiarImagen(){
+                element = document.getElementById("MiImagen");
+                if (element.src.match ("FoquitoPrendido")){
+                    element.src = "FoquitoApagado.png";
+                }
+                    else {
+                        element.src = "FoquitoPrendido.png";
+                    }
+                }
+        </script>
+    </head>
+    <body>
+        <div id = "demo">
+            Tec Web Who!
+        </div>
+        <button type = "button" onclick= "miFuncion(); Date();">
+           Ok
+        </button>
+        <a onclick = "miFecha();">Fecha</a>
+        <div id ="fecha"></div>
+        <hr>
+        <img src = "FoquitoApagado.png" id ="MiImagen" onclick= "cambiarImagen();"  style = "width: 100px; height: 100px;" >
+    </body>
+</html>

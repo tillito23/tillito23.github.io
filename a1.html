@@ -1,0 +1,27 @@
+<center>
+    <form action="/app/Facturacion" method="post">
+      <input class="inpF" autofocus style="font-size: 16px;" type="text" name="consultar" id="consultar" onkeydown="facturacion(event)">
+      <input class="btnSelect" type="submit" value="Agregar">
+      <input type="hidden" name="usuario" value="$objeto.usuario">
+      <input type="hidden" name="path" value="$objeto.path">
+      <input type="hidden" name="ventana" value="$objeto.ventana">
+    </form>  
+      <input type="button" value="Paste" onclick="jspaste()"/>
+  </center>
+  <script>
+    function jspaste () {
+        document.getElementById("consultar").value = "";
+        navigator.clipboard.readText()
+        .then(txt => {
+        
+        document.getElementById("consultar").value = txt;
+        })
+        .catch(err => {
+        alert("Dar permitir para continuar");
+        });
+    }
+    window.onload=abrir();
+    // function abrir(){
+    //   window.open("http://lectormoriah.netlify.com/")
+    // }	
+  </script>

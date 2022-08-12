@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="/style.css">
+    <title>Lector Moriah</title>
+
+  </head>
+  <body>
+		<!-- <p id="resultado">Aquí aparecerá el código</p>	 -->
+		<div class="result">
+			<div style="width:200px ;">
+				<label for="">Codigo:</label>
+				<input type="text" id="resultado" class="inpA">
+			</div>
+			
+			<button onclick="copyToClipBoard()" id="btnc" class="btnSelect">Usar</button>
+		</div>
+		
+		<script>
+			function copyToClipBoard() {
+
+			var content = document.getElementById('resultado');
+
+			content.select();
+			document.execCommand('copy');
+
+			// alert("Copied!");
+			
+			setTimeout(cerrar, 200);
+			function cerrar(){
+				window.close();    
+			}
+			
+			}
+			
+		</script>
+		<div class="contCamara">
+			<div id="contenedor"></div>	
+		</div>
+			
+		<!-- <script src="https://unpkg.com/quagga@0.12.1/dist/quagga.min.js"></script> -->
+		<script src="lector.js"></script>
+		<script src="quagga.min.js"></script>
+   <script>
+		window.onload=loadLector();
+   </script>
+  </body>
+</html>
